@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap');
+
+@font-face {
+  font-family: "Aktiv Grotesk Extended";
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/AktivGroteskEx_Rg.ttf');
+}
+
+.App {
+  font-family: "Aktiv Grotesk Extended", sans-serif;
+  background-color: #004D80;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 40px;
+}
+
+.river-blue {
+  background-color: #004D80;
+  color: #EEF4F8;
+}
+
+.rust-belt {
+  background-color: #D34E23;
+  color: #EEF4F8;
+}
+
+#pete-portrait {
+  background-image: url("../assets/images/pete.png");
+}
+
+#about-us-photo {
+  background-image: url("../assets/images/about-us-photo.png");
+}
+
+.background-img {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar-spacer {
+  height: 10vh;
+  min-height: 75px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 72px;
+  margin: 0 auto 20px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 42px;
+}
+
+h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+p {
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+}
+
+ul {
+  text-align: left;
+}
+
+#register-button {
+  color: #EEF4F8;
+  background-color: #1D253C;
+  border: none;
+  font-size: 36px;
+  font-family: "Aktiv Grotesk Extended", sans-serif;
+  text-transform: uppercase;
+  padding: 20px;
+  margin: auto;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.5s ease;
+  box-shadow: 0 0 5px #4d4d4d;
+  text-decoration: none;
+}
+
+#register-button:hover {
+  background-color: #F2BA42;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.blue-sky {
+  background-color: #85B6C5;
+  color: #1D253C;
+}
+
+.center-ul {
+  margin: auto;
+}
+
+.about-us-button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-us-links {
+  text-decoration: none;
+  border: 4px solid black;
+  padding: 10px;
+  width: 175px;
+  color: black !important;
+  margin: 20px;
+  background-color: transparent;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.about-us-links:hover {
+  color: white !important;
+  background-color: black;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.calm-blue {
+  background-color: #EEF4F8;
+  color: #1D253C;
+}
+
+.single-column {
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.media {
+  width: 30vw;
+  height: 21vw;
+  border: none;
+  margin-right: 20px;
+  min-width: 300px;
+  min-height: 210px;
+}
+
+.media-container {
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.heartland-yellow {
+  background-color: #F2BA42;
+  color: #1D253C;
+}
+
+.heartland-yellow a:hover {
+  color: #D34E23;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+a {
+  color: inherit;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.strato-blue {
+  background-color: #1D253C;
+  color: #EEF4F8;
+}
+
+.powrLoaded {
+  padding: 15px 25px 0;
+}
+
+.sans-serif {
+  font-family: "Aktiv Grotesk Extended", sans-serif;
+}
+
+footer {
+  padding: 30px 0;
+}
+
+footer p {
+  font-size: 12px;
+  padding: 0 15%;
+}
+
+footer img {
+  height: 20px;
+  margin: 5px;
+}
+
+.fixed {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+@media (max-width: 1000px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .background-img {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-position: center;
+  }
+}

@@ -1,0 +1,130 @@
+.nav-bar {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  background-color: #1D253C;
+  height: 81px;
+  z-index: 1000000;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.nav-bar ul,
+.nav-buttons ul {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.nav-bar li,
+.nav-buttons li {
+  list-style: none;
+  margin: 0 15px;
+  text-align: center;
+}
+
+.nav-bar a,
+.nav-buttons a {
+  text-decoration: none;
+  color: #EEF4F8;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  font-family: "Aktiv Grotesk Extended", sans-serif;
+  cursor: pointer;
+}
+
+.nav-bar a:hover,
+.nav-buttons a:hover {
+  color: #F2BA42 !important;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+#banner-logo {
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (min-width: 1001px) {
+  .nav-bar {
+    position: sticky;
+    top: 0;
+  }
+
+  .nav-bar li {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    position: sticky;
+    top: 0;
+    padding: 0;
+    z-index: 1000000000000000000000;
+    width: 100%;
+  }
+
+  .nav-bar {
+    position: relative;
+    margin: 0;
+  }
+
+  .nav-icon {
+    margin: 1.5em;
+    width: 40px;
+    z-index: 1000000000000000;
+  }
+
+  .nav-icon:after,
+  .nav-icon:before,
+  .nav-icon div {
+    background-color: #fff;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 5px;
+    margin: 7px 0;
+    transition: all .2s ease-in-out;
+  }
+
+  .nav-icon-active:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+
+  .nav-icon-active:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+
+  .nav-icon-active div {
+    transform: scale(0);
+  }
+
+  .nav-buttons {
+    overflow: hidden;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    height: calc(100vh - 81px);
+    background-color: #1D253C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hide-nav-buttons {
+    height: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+  .nav-buttons ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

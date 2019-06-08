@@ -1,0 +1,150 @@
+/* Change the form background color, text color, and typeface */
+.can_embed #can_embed_form,
+.can_embed #donate_auto_modal {
+  background-color: #004D80 !important;
+  color: #1D253C !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* Change link color */
+.can_embed #can_embed_form .can_embed #can_embed_form a,
+.can_embed #can_embed_form .can_embed #donate_auto_modal a {
+  color: #1D253C !important;
+}
+
+#signup-form-wrapper .can_embed.form #can_embed_form_inner > h2 {
+  border-bottom: 0 solid #1D253C !important;
+}
+
+#signup-form-wrapper #can_embed_form label {
+  color: #1D253C !important;
+}
+
+#can_embed_form label {
+  color: #EEF4F8 !important;
+}
+
+#signup-form-wrapper .lined_after_title:after,
+#signup-form-wrapper #can_embed_form h3 + h4:after,
+#signup-form-wrapper .event_campaign #can_embed_form > h2 + h4:after,
+#signup-form-wrapper .letter #can_embed_form h2.line + h4:after,
+#signup-form-wrapper #can_embed_form #letter-form > div > h4:after,
+#signup-form-wrapper #can_embed_form #letter-form #form_col1 > h4:after,
+#signup-form-wrapper #can_embed_form #letter-form #form_col2 > h4:after,
+#signup-form-wrapper #can_embed_form #select_tickets > h4:after,
+#signup-form-wrapper #can_embed_form .action_sidebar > h4:not(.sidebartitle):after,
+#signup-form-wrapper #can_embed_form_inner > h2 + h4:after,
+#signup-form-wrapper #can_embed_form_inner > .last_line + h4:after {
+  background-color: #EEF4F8 !important;
+}
+
+/* Heading colors */
+.can_embed #can_embed_form h1,
+.can_embed #donate_auto_modal h1,
+.can_embed #can_embed_form h2,
+.can_embed #donate_auto_modal h2,
+.can_embed #can_embed_form h3,
+.can_embed #donate_auto_modal h3,
+.can_embed #can_embed_form h4,
+.can_embed #donate_auto_modal h4,
+.can_embed #can_embed_form h5,
+.can_embed #donate_auto_modal h5,
+.can_embed #can_embed_form h6,
+.can_embed #donate_auto_modal h6 {
+  color: #EEF4F8 !important;
+  display: none !important;
+
+}
+
+/* Welcome message background color */
+.can_embed #can_embed_form #action_welcome_message #action_welcome_message_inner,
+.can_embed #donate_auto_modal #action_welcome_message #action_welcome_message_inner {
+  background-color: #EEF4F8 !important;
+}
+
+/* Remove the Action Network Logo */
+.can_embed #can_embed_form #d_sharing label,
+.can_embed #can_embed_form .action_info_user,
+.can_embed #logo_wrap {
+  display: none !important;
+}
+
+
+#can_embed_form.can_float #form_col1,
+#can_embed_form.can_float #form_col2 {
+  float: none !important;
+  width: 100% !important;
+}
+
+/* Button Background Color */
+.can_embed .can_button,
+.can_embed #can_embed_form input[type="submit"],
+.can_embed #can_embed_form .button,
+.can_embed #donate_auto_modal input[type="submit"],
+.can_embed #donate_auto_modal .button {
+  background-color: #D34E23 !important;
+  border: 2px solid #1D253C !important;
+  color: #1D253C !important;
+  font-size: 32px !important;
+  transition: all .5s !important;
+}
+
+/* Button Background Color on Hover */
+.can_embed .can_button:hover,
+.can_embed #can_embed_form input[type="submit"]:hover,
+.can_embed #can_embed_form .button:hover,
+.can_embed #donate_auto_modal input[type="submit"]:hover,
+.can_embed #donate_auto_modal .button:hover {
+  background-color: #EEF4F8 !important;
+  color: #f2Ba42 !important;
+}
+
+/* Thank You Page Header Background Color */
+.can_embed #can_embed_form #can_thank_you,
+.can_embed #donate_auto_modal #can_thank_you {
+  background-color: #F2BA42 !important;
+}
+
+/* Thank You Page Header Text Color */
+.can_embed #can_embed_form #can_thank_you,
+.can_embed #donate_auto_modal #can_thank_you,
+.can_embed #can_embed_form #can_thank_you h1,
+.can_embed #donate_auto_modal #can_thank_you h1,
+.can_embed #can_embed_form #can_thank_you h4,
+.can_embed #donate_auto_modal #can_thank_you h4,
+.can_embed #can_embed_form #can_thank_you #action_info .action_info_user,
+.can_embed #donate_auto_modal #can_thank_you #action_info .action_info_user,
+.can_embed #can_embed_form #can_thank_you #action_info .action_info_user a,
+.can_embed #donate_auto_modal #can_thank_you #action_info .action_info_user a {
+  color: #EEF4F8 !important;
+}
+
+/* Thank You Page Divider Line */
+.can_embed #can_embed_form #can_thank_you #action_info,
+.can_embed #donate_auto_modal #can_thank_you #action_info {
+  border-color: #EEF4F8 !important;
+}
+
+.can_embed #can_embed_form .check_radio_field label {
+  display: block!important;
+  width: auto!important;
+  font-size: 14px!important;
+  line-height: 20px!important;
+  height: auto!important;
+  color: #EEf4f8!important;
+  padding: 4px 0 0 25px!important;
+  position: relative!important;
+  float: none!important;
+  margin: 0 20px 0 0!important;
+}
+
+.can_embed #can_embed_form #d_sharing {
+  border-top: 0 !important;
+}
+
+.can_embed #form_col1 .checkbox {
+  display: block;
+  float: left;
+  width: 25%;
+}
