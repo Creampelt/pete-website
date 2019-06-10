@@ -19,7 +19,7 @@ export default class NavBarMobile extends React.Component {
           <img id={"banner-logo"} src={bannerLogo} alt={"Pete for America Logo"}/>
         </div>
         <div className={`nav-buttons ${!this.state.showMenu ? "hide-nav-buttons" : ""}`}>
-          <ul style={{ height: window.innerHeight + "px" }}>{this.props.links}</ul>
+          <ul className={"nav-ul"} style={{ height: window.innerHeight + "px" }}>{this.props.links}</ul>
         </div>
       </div>
     )
