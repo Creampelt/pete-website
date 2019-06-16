@@ -1,7 +1,7 @@
 import React from "react";
 import youtubeIcon from "../assets/images/icons/youtube.png";
 import facebookIcon from "../assets/images/icons/facebook.png";
-import "../stylesheets/nav-bar-and-footer.css";
+import "../stylesheets/NavBarAndFooter.css";
 
 export default class Footer extends React.Component {
 

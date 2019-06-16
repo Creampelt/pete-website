@@ -12,10 +12,6 @@
   background-color: #1D253C;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .row {
   display: flex;
   flex-direction: row;
@@ -40,14 +36,6 @@
   color: #EEF4F8;
 }
 
-#pete-portrait {
-  background-image: url("../assets/images/pete.png");
-}
-
-#about-us-photo {
-  background-image: url("../assets/images/about-us-photo.png");
-}
-
 .background-img {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -56,15 +44,16 @@
   background-position: center;
 }
 
-.navbar-spacer {
-  height: 10vh;
-  min-height: 75px;
-}
-
 h1 {
   text-transform: uppercase;
-  font-size: 72px;
+  font-size: 15vw;
   margin: 0 auto 20px;
+}
+
+@media (min-width: 480px) {
+  h1 {
+    font-size: 72px;
+  }
 }
 
 h2 {
@@ -90,6 +79,10 @@ ul {
   text-align: left;
 }
 
+.link:hover {
+  color: #D34E23;
+}
+
 #register-button {
   color: #EEF4F8;
   background-color: #1D253C;
@@ -103,6 +96,7 @@ ul {
   -webkit-transition: all 0.5s ease;
   box-shadow: 0 0 5px #4d4d4d;
   text-decoration: none;
+  text-align: center;
 }
 
 #register-button:hover {
@@ -110,6 +104,7 @@ ul {
   transition: all 0.5s ease;
   -webkit-transition: all 0.2s ease;
 }
+
 
 .blue-sky {
   background-color: #85B6C5;
@@ -138,13 +133,6 @@ ul {
   -webkit-transition: all 0.5s ease;
 }
 
-.about-us-links:hover {
-  color: white !important;
-  background-color: black;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-}
-
 .calm-blue {
   background-color: #EEF4F8;
   color: #1D253C;
@@ -161,13 +149,14 @@ ul {
   width: 30vw;
   height: 21vw;
   border: none;
-  margin-right: 20px;
+  margin: 10px;
   min-width: 300px;
   min-height: 210px;
 }
 
-.media-container {
+#media-container {
   justify-content: center;
+  align-items: center;
   margin-bottom: 60px;
   flex-wrap: wrap;
 }
@@ -209,6 +198,46 @@ a {
   background-position: left;
 }
 
+.about-us-links:hover {
+  color: white !important;
+  background-color: black;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.single-col-page {
+  padding: 50px 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.collat-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-links {
+  padding: 0 1em;
+}
+
+.language-links:hover {
+  color: #D34E23;
+}
+
+.language-button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#register-text {
+  text-align: center;
+}
+
 @media (max-width: 1000px) {
   .row {
     flex-direction: column;
@@ -220,5 +249,9 @@ a {
     -o-background-size: contain;
     background-size: contain;
     background-position: center;
+  }
+
+  .collat-row {
+    flex-direction: column;
   }
 }

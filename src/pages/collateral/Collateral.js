@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/collateral.css";
+import "../../stylesheets/App.css";
 
 const EnglishSpanishButtons = ({ engHref, spanHref }) => (
   <div className={"language-button-container"}>
@@ -9,13 +9,9 @@ const EnglishSpanishButtons = ({ engHref, spanHref }) => (
 );
 
 export default class Collateral extends React.Component {
-  componentWillMount() {
-    this.props.setPage("/collateral");
-  }
-
   render() {
     return (
-      <div className={"page"}>
+      <div id={"collateral"} className={"calm-blue single-col-page"}>
         <h2 style={{ marginTop: "0" }}>Fliers and Collateral</h2>
         <div>
           <h4>Flier used at Morgan Hill Mushroom Mardi Gras</h4>

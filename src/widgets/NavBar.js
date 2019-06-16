@@ -1,39 +1,34 @@
 import React from 'react';
-import '../stylesheets/nav-bar-and-footer.css';
+import '../stylesheets/NavBarAndFooter.css';
 import bannerLogo from "../assets/images/banner-logo-pete-bridge-2020.png";
 import animateScrollTo from 'animated-scroll-to';
 import NavBarMobile from "./NavBarMobile";
 import { Link } from 'react-router-dom';
-
-const PAGES = [
-  { title: "Home", href: "/", subHref: "#home" },
-  { title: "About Us", href: "/", subHref: "#about-us", },
-  { title: "Meet Pete", href: "/", subHref: "#meet-pete" },
-  { title: "Collateral", href: "/collateral" },
-];
-
-const OPTIONS = {
-  offset: -79
-};
+import options from "../constants/ScrollToOptions";
 
 function scrollTo(link) {
-  animateScrollTo(document.querySelector(link), OPTIONS);
+  animateScrollTo(document.querySelector(link), options);
 }
 
 export default class NavBar extends React.Component {
   state = {
-    navLinks: null
+    navLinks: null,
+    showMenu: false
   };
 
-  renderNavLinks() {
-    let navLinks = PAGES.map(({ title, href, subHref }, index) => {
-      if (this.props.page === href && subHref) {
+  toggleMenu = () => this.setState({ showMenu: !this.state.showMenu });
+
+  renderNavLinks = () => {
+    let navLinks = this.props.pageLinkData.map(({ title, href, section }, index) => {
+      if (this.props.page === href) {
         return (
           <li key={index} className={"nav-li"}>
             <button
-              className={"nav-link"}
-              onClick={() => scrollTo(subHref)}
-              style={{ color: this.props.colors[index] }}
+              className={`nav-link ${this.props.navColors[index] ? "active-nav-link" : ""}`}
+              onClick={() => {
+                this.toggleMenu();
+                scrollTo(section);
+              }}
             >
               {title}
             </button>
@@ -43,9 +38,12 @@ export default class NavBar extends React.Component {
         return (
           <li key={index} className={"nav-li"}>
             <Link
-              className={`nav-link ${this.props.page === href ? "active-nav-link" : ""}`}
+              className={"nav-link"}
               to={href}
-              onClick={() => this.props.setSection(subHref)}
+              onClick={() => {
+                this.props.setSection(section);
+                this.toggleMenu();
+              }}
             >
               {title}
             </Link>
@@ -57,6 +55,7 @@ export default class NavBar extends React.Component {
   };
 
   componentDidMount() {
+    window.addEventListener("resize", this.renderNavLinks);
     this.renderNavLinks();
   }
 
@@ -66,9 +65,13 @@ export default class NavBar extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.renderNavLinks);
+  }
+
   render() {
     if (window.innerWidth < 1000) {
-      return <NavBarMobile links={this.state.navLinks} />
+      return <NavBarMobile links={this.state.navLinks} showMenu={this.state.showMenu} toggleMenu={this.toggleMenu} />
     } else {
       return (
         <div className={"nav-bar"}>
