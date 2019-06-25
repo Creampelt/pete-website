@@ -1,62 +1,82 @@
 import React from 'react';
-import '../stylesheets/nav-bar.css';
+import '../stylesheets/NavBarAndFooter.css';
 import bannerLogo from "../assets/images/banner-logo-pete-bridge-2020.png";
 import animateScrollTo from 'animated-scroll-to';
 import NavBarMobile from "./NavBarMobile";
-
-const PAGES = [
-  { title: "Home", href: "#home" },
-  { title: "About Us", href: "#about-us" },
-  { title: "Meet Pete", href: "#meet-pete" },
-  { title: "Collateral", href: "#" },
-];
-
-const OPTIONS = {
-  offset: -79
-};
+import { Link } from 'react-router-dom';
+import options from "../constants/ScrollToOptions";
 
 function scrollTo(link) {
-  if (link[0] === "#") {
-    animateScrollTo(document.querySelector(link), OPTIONS);
-  }
+  animateScrollTo(document.querySelector(link), options);
 }
 
 export default class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.navLinks = null;
-  }
+  state = {
+    navLinks: null,
+    showMenu: false
+  };
 
-  renderNavLinks() {
-    this.navLinks = PAGES.map(({ title, href }, index) => (
-      <li key={index}>
-        <a
-          href={href[0] !== "#" ? href : null}
-          onClick={href[0] === "#" ? (() => scrollTo(href)) : null}
-          style={{ color: index < this.props.colors.length && window.innerWidth > 1000 ? this.props.colors[index] : "#EEF4F8" }}
-        >
-          {title}
-        </a>
-      </li>
-    ))
+  toggleMenu = () => this.setState({ showMenu: !this.state.showMenu });
+
+  renderNavLinks = () => {
+    let navLinks = this.props.pageLinkData.map(({ title, href, section }, index) => {
+      if (this.props.page === href) {
+        return (
+          <li key={index} className={"nav-li"}>
+            <button
+              className={`nav-link ${this.props.navColors[index] ? "active-nav-link" : ""}`}
+              onClick={() => {
+                this.toggleMenu();
+                scrollTo(section);
+              }}
+            >
+              {title}
+            </button>
+          </li>
+        )
+      } else {
+        return (
+          <li key={index} className={"nav-li"}>
+            <Link
+              className={"nav-link"}
+              to={href}
+              onClick={() => {
+                this.props.setSection(section);
+                this.toggleMenu();
+              }}
+            >
+              {title}
+            </Link>
+          </li>
+        )
+      }
+    });
+    this.setState({ navLinks });
   };
 
   componentDidMount() {
+    window.addEventListener("resize", this.renderNavLinks);
     this.renderNavLinks();
   }
 
-  componentDidUpdate() {
-    this.renderNavLinks();
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps !== this.props || prevState === this.state) {
+      this.renderNavLinks();
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.renderNavLinks);
   }
 
   render() {
     if (window.innerWidth < 1000) {
-      return <NavBarMobile links={this.navLinks} />
+      return <NavBarMobile links={this.state.navLinks} showMenu={this.state.showMenu} toggleMenu={this.toggleMenu} />
     } else {
       return (
         <div className={"nav-bar"}>
           <img id={"banner-logo"} src={bannerLogo} alt={"Pete for America Logo"}/>
-          <ul>{this.navLinks}</ul>
+          <ul className={"nav-ul"}>{this.state.navLinks}</ul>
         </div>
       );
     }

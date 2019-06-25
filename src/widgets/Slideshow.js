@@ -1,8 +1,8 @@
-import React from 'react';
-import "../stylesheets/slideshow.css";
-import { library } from '@fortawesome/fontawesome-svg-core'
+import React from "react";
+import "../stylesheets/Slideshow.css";
+import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 library.add(faArrowRight, faArrowLeft);
 
@@ -11,16 +11,16 @@ export default class Slideshow extends React.Component {
     super(props);
     this.state = {
       currentIndex: 0,
-      translateValue: 0
+      translateValue: 0,
+      images: []
     }
   }
 
   goToPrevSlide = () => {
     if (this.state.currentIndex === 0) {
-      console.log(this.state.translateValue);
       return this.setState({
-        currentIndex: this.props.images.length - 1,
-        translateValue: this.slideWidth() * -(this.props.images.length - 1)
+        currentIndex: this.state.images.length - 1,
+        translateValue: this.slideWidth() * -(this.state.images.length - 1)
       })
     }
 
@@ -31,11 +31,10 @@ export default class Slideshow extends React.Component {
   };
 
   goToNextSlide = () => {
-    console.log(this.state.translateValue);
     // Exiting the method early if we are at the end of the images array.
     // We also want to reset currentIndex and translateValue, so we return
     // to the first image in the array.
-    if (this.state.currentIndex === this.props.images.length - 1) {
+    if (this.state.currentIndex === this.state.images.length - 1) {
       return this.setState({
         currentIndex: 0,
         translateValue: 0
@@ -50,29 +49,32 @@ export default class Slideshow extends React.Component {
   };
 
   slideWidth = () => {
-    return document.querySelector('.slide').clientWidth
+    return document.querySelector(".slide").clientWidth
   };
+
+  requireImages = () => {
+    let r = this.props.images;
+    let images = r.keys().map(item => r(item));
+    this.setState({ images });
+  };
+
+  componentDidMount() {
+    this.requireImages();
+  }
 
   render() {
     return (
-      <div className="slider">
-        <div className="slider-wrapper"
-             style={{
-               transform: `translateX(${this.state.translateValue}px)`,
-               transition: 'transform ease-out 0.45s'
-             }}>
-          {
-            this.props.images.map((image, i) => (
-              <Slide key={i} image={image} />
-            ))
-          }
+      <div className={"slider media"}>
+        <div
+          className={"slider-wrapper"}
+          style={{
+            transform: `translateX(${this.state.translateValue}px)`,
+            transition: "transform ease-out 0.45s"
+          }}>
+          {this.state.images.map((image, i) => <Slide key={i} image={image} />)}
         </div>
-        <LeftArrow
-          goToPrevSlide={this.goToPrevSlide}
-        />
-        <RightArrow
-          goToNextSlide={this.goToNextSlide}
-        />
+        <LeftArrow goToPrevSlide={this.goToPrevSlide} />
+        <RightArrow goToNextSlide={this.goToNextSlide} />
       </div>
     );
   }
@@ -82,17 +84,17 @@ export default class Slideshow extends React.Component {
 const Slide = ({ image }) => {
   const styles = {
     backgroundImage: `url(${image})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '50% 60%'
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "50% 60%"
   };
-  return <div className="slide" style={styles} />
+  return <div className={"slide"} style={styles} />
 };
 
 
 const LeftArrow = (props) => {
   return (
-    <div className="backArrow arrow" onClick={props.goToPrevSlide}>
+    <div className={"backArrow arrow"} onClick={props.goToPrevSlide}>
       <FontAwesomeIcon icon={"arrow-left"} className={"fa fa-2x"} />
     </div>
   );
@@ -101,7 +103,7 @@ const LeftArrow = (props) => {
 
 const RightArrow = (props) => {
   return (
-    <div className="nextArrow arrow" onClick={props.goToNextSlide}>
+    <div className={"nextArrow arrow"} onClick={props.goToNextSlide}>
       <FontAwesomeIcon icon={"arrow-right"} className={"fa fa-2x"} />
     </div>
   );
