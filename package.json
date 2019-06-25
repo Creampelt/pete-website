@@ -8,6 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "add": "^2.0.6",
     "animated-scroll-to": "^1.2.2",
+    "create-react": "0.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
