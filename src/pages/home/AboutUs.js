@@ -34,7 +34,7 @@ export default class AboutUs extends React.Component {
               <h4>SFPride Parade - Jun 30</h4>
             </li>
             <li>
-              <h4>SJPride Parade - Aug 24</h4>
+              <h4>SJPride Parade - Aug 25</h4>
             </li>
           </ul>
           <p>
