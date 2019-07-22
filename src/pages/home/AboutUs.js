@@ -19,19 +19,7 @@ export default class AboutUs extends React.Component {
           </p>
           <ul className={"center-ul"}>
             <li>
-              <h4>
-                <a
-                  href={
-                    "https://www.mobilize.us/peteforamerica/event/96385/?fbclid=IwAR02_UGgtImG1kszPoGf-GUJ51UEV3hkAg0UxaIf-5GepFadSWTafhu0DYk&rname=Natasha&share_context=event-detail-page-modal&share_medium=copy_link"
-                  }
-                >
-                  Debate Watch Party
-                </a>{" "}
-                - Jun 27
-              </h4>
-            </li>
-            <li>
-              <h4>SFPride Parade - Jun 30</h4>
+              <h4>Debate Watch Party - July 30</h4>
             </li>
             <li>
               <h4>SJPride Parade - Aug 25</h4>
