@@ -1,0 +1,5 @@
+apps:
+  - name: petewebsite
+    script: app.js
+    exec_mode: fork
+    watch: true

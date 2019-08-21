@@ -229,6 +229,11 @@ a {
   padding: 0 1em;
 }
 
+.language-links-invisible {
+  padding: 0 1em;
+  visibility: hidden;
+}
+
 .language-links:hover {
   color: #D34E23;
 }
