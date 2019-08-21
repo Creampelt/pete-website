@@ -1,7 +1,7 @@
 import React from "react";
 import "./stylesheets/App.css";
-import NavBar from "./widgets/NavBar";
-import Footer from "./widgets/Footer";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import "./stylesheets/ActionNetworkStyles.css";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import SkeletonPage from "./pages/SkeletonPage";
@@ -78,7 +78,7 @@ export default class App extends React.Component {
           </SkeletonPage>
         )} />
       )
-    }).concat(<Route component={NotFound} />)}
+    }).concat(<Route component={NotFound} key={pages.length} />)}
     </Switch>
   );
 

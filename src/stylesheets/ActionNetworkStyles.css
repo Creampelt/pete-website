@@ -1,7 +1,7 @@
 /* Change the form background color, text color, and typeface */
 .can_embed #can_embed_form,
 .can_embed #donate_auto_modal {
-  background-color: #004D80 !important;
+  background-color: transparent !important;
   color: #1D253C !important;
   border: 0 !important;
   padding: 0 !important;
@@ -10,7 +10,7 @@
 /* Change link color */
 .can_embed #can_embed_form .can_embed #can_embed_form a,
 .can_embed #can_embed_form .can_embed #donate_auto_modal a {
-  color: #1D253C !important;
+  color: #f2e4d6 !important;
 }
 
 #signup-form-wrapper .can_embed.form #can_embed_form_inner > h2 {
@@ -22,7 +22,7 @@
 }
 
 #can_embed_form label {
-  color: #EEF4F8 !important;
+  color: #f2e4d6 !important;
 }
 
 #signup-form-wrapper .lined_after_title:after,
@@ -52,7 +52,7 @@
 .can_embed #donate_auto_modal h5,
 .can_embed #can_embed_form h6,
 .can_embed #donate_auto_modal h6 {
-  color: #EEF4F8 !important;
+  color: #f2e4d6 !important;
   display: none !important;
 
 }
@@ -117,7 +117,7 @@
 .can_embed #donate_auto_modal #can_thank_you #action_info .action_info_user,
 .can_embed #can_embed_form #can_thank_you #action_info .action_info_user a,
 .can_embed #donate_auto_modal #can_thank_you #action_info .action_info_user a {
-  color: #EEF4F8 !important;
+  color: #f2e4d6 !important;
 }
 
 /* Thank You Page Divider Line */
@@ -132,7 +132,7 @@
   font-size: 14px!important;
   line-height: 20px!important;
   height: auto!important;
-  color: #EEf4f8!important;
+  color: #f2e4d6!important;
   padding: 4px 0 0 25px!important;
   position: relative!important;
   float: none!important;

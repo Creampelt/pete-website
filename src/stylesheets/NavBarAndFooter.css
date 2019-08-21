@@ -1,5 +1,5 @@
 .nav-bar {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100vw;
   background-color: #1D253C;
@@ -29,11 +29,12 @@
   color: #EEF4F8;
   transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
-  font-family: "Aktiv Grotesk Extended", sans-serif;
+  font-family: "Changa", sans-serif;
   cursor: pointer;
   background-color: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
+  text-transform: uppercase;
   padding: 0;
   margin: 0;
 }

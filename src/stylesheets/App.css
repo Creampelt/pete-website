@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Changa&display=swap');
 
 @font-face {
   font-family: "Aktiv Grotesk Extended";
@@ -10,6 +11,7 @@
 .App {
   font-family: "Aktiv Grotesk Extended", sans-serif;
   background-color: #1D253C;
+  overflow: hidden;
 }
 
 .row {
@@ -23,11 +25,14 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 40px;
+}
+
+.column-content {
+  padding: 40px 80px;
 }
 
 .river-blue {
-  background-color: #004D80;
+  background-color: #004d80;
   color: #EEF4F8;
 }
 
@@ -47,12 +52,12 @@
 h1 {
   text-transform: uppercase;
   font-size: 15vw;
-  margin: 0 auto 20px;
+  margin: 0;
 }
 
 @media (min-width: 480px) {
   h1 {
-    font-size: 72px;
+    font-size: 50px;
   }
 }
 
@@ -168,8 +173,8 @@ ul {
 
 .heartland-yellow a:hover {
   color: #D34E23;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
+  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
 }
 
 a {
@@ -181,7 +186,7 @@ a {
 
 .strato-blue {
   background-color: #1D253C;
-  color: #EEF4F8;
+  color: #f2e4d6;
 }
 
 .powrLoaded {
@@ -236,6 +241,177 @@ a {
 
 #register-text {
   text-align: center;
+}
+
+.background {
+  opacity: 0.5;
+  width: 60vw;
+}
+
+.bottom-block {
+  position: absolute;
+  top: 0;
+}
+
+.top-block {
+  position: absolute;
+}
+
+.right-block {
+  right: 0;
+}
+
+.left-block {
+  left: 0;
+}
+
+.transparent {
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  opacity: 0
+}
+
+.opaque {
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  opacity: 1
+}
+
+.arrow-button {
+  font-family: "Changa", sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  padding: 20px 40px 20px 30px;
+  color: #f2ba42;
+  background-color: #1d253c;
+  width: 40vw;
+  position: relative;
+  left: 0;
+  z-index: 1000000000;
+}
+
+.arrow-button > span {
+  -o-transition: all ease 0.25s;
+  -webkit-transition: all ease 0.25s;
+  -moz-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  position: absolute;
+  right: 30px;
+  color: #F2BA42;
+}
+
+.arrow-button:hover > span {
+  -o-transition: all ease 0.25s;
+  -webkit-transition: all ease 0.25s;
+  -moz-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  transform: translate(15px);
+}
+
+.animated-image {
+  object-fit: cover;
+  width: 40vw;
+  height: 40vw;
+  position: absolute;
+}
+
+.move-in-right-hidden {
+  transform: translate(100%);
+}
+
+.move-in-left-hidden {
+  transform: translate(-100%);
+}
+
+.move-in-shown {
+  -o-transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  transform: translate(0);
+}
+
+.spacer {
+  height: 100px;
+}
+
+.section {
+  background-color: #eef4f8;
+}
+
+#get-involved-form {
+  width: 45vw;
+  position: absolute;
+  padding: 20px;
+  font-size: 20px;
+  font-family: "EB Garamond", serif;
+  right: 0;
+}
+
+#get-involved-form > h4 {
+  font-family: "Changa", sans-serif;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+#get-involved-form form {
+  display: flex;
+  justify-content: space-between;
+}
+
+#get-involved-form form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+form > .large-col {
+  flex-grow: 1;
+}
+
+form > .small-col {
+  max-width: 10em;
+}
+
+#get-involved-form input {
+  padding: 15px;
+  font-size: 20px;
+  font-family: "EB Garamond", serif;
+  border: none;
+  margin: 5px;
+}
+
+.submit {
+  -o-transition: all ease 0.25s;
+  -webkit-transition: all ease 0.25s;
+  -moz-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  font-family: "Changa", sans-serif !important;
+  text-transform: uppercase;
+  height: 100%;
+  padding: 0 !important;
+  background-color: transparent;
+  border: 3px solid #1D253C !important;
+  color: #1D253C;
+}
+
+.submit:hover {
+  -o-transition: all ease 0.25s;
+  -webkit-transition: all ease 0.25s;
+  -moz-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  background-color: #1D253C;
+  color: #F2BA42;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
 
 @media (max-width: 1000px) {
