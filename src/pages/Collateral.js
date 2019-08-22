@@ -1,23 +1,22 @@
 import React from "react";
-import "../../stylesheets/App.css";
-import flyer_morgan_hill_en from "../../assets/downloads/flyer_morgan_hill_en.pdf";
-import flyer_morgan_hill_es from "../../assets/downloads/flyer_morgan_hill_es.pdf";
-import flyer_recruit_en from "../../assets/downloads/flyer_recruit_en.pdf";
+import "../stylesheets/App.css";
+import flyer_morgan_hill_en from "../assets/downloads/flyer_morgan_hill_en.pdf";
+import flyer_morgan_hill_es from "../assets/downloads/flyer_morgan_hill_es.pdf";
+import flyer_recruit_en from "../assets/downloads/flyer_recruit_en.pdf";
 
-const EnglishSpanishButtons = ({ engHref, spanHref }) => (
-  <div className={"language-button-container"}>
-    <a className={"language-links"} target={"_blank"} href={engHref}><p>English</p></a>
-    <a className={"language-links"} target={"_blank"} href={spanHref}><p>Español</p></a>
-  </div>
-);
-
-const EnglishOnlyButton = ({ engHref }) => (
+const EnglishSpanishButtons = ({ engHref, spanHref }) => {
+  const Button = ({ href, children }) => (
+    href
+      ? <a className={"language-links"} target={"_blank"} href={href}><p>{children}</p></a>
+      : <p className={"language-links"} style={{ opacity: 0 }}>{children}</p>
+  );
+  return (
     <div className={"language-button-container"}>
-        <a className={"language-links"} target={"_blank"} href={engHref}><p>English</p></a>
-        <a className={"language-links-invisible"} target={"_blank"} ><p>Español</p></a>
-
+      <Button href={engHref}>English</Button>
+      <Button href={spanHref}>Spanish</Button>
     </div>
-);
+  )
+};
 
 export default class Collateral extends React.Component {
   render() {
@@ -41,9 +40,9 @@ export default class Collateral extends React.Component {
               <p>
                Flyer used to recruit new members & event signups. Distribute these to recruit members to our events.
               </p>
-               <EnglishOnlyButton
-                    engHref={flyer_recruit_en}
-                />
+              <EnglishSpanishButtons
+                engHref={flyer_recruit_en}
+              />
             </div>
         </div>
       </div>

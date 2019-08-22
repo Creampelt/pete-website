@@ -26,7 +26,7 @@ export default class AboutUs extends React.Component {
                   of upcoming events such as:
                 </p>
                 <ul className={"center-ul"}>
-                  <li><h4><a href={"https://www.mobilize.us/peteforamerica/event/106448/"} target={"_blank"}>Debate Watch Party - July 30</a></li>
+                  <li><h4><a href={"https://www.mobilize.us/peteforamerica/event/106448/"} target={"_blank"}>Debate Watch Party - July 30</a></h4></li>
                   <li><h4>SJ Pride Parade - Aug 25</h4></li>
                 </ul>
                 <p>We organize our events through the SV for Pete Meetup.  Click below to get directed there and sign up!</p>
