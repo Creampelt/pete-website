@@ -2,7 +2,6 @@ import React from "react";
 import "./stylesheets/App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import "./stylesheets/ActionNetworkStyles.css";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import SkeletonPage from "./pages/SkeletonPage";
 import NotFound from "./pages/NotFound";

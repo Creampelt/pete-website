@@ -1,8 +1,41 @@
 import React from "react";
 import aboutUs from "../../assets/images/about-us-photo.png";
 import AnimatedRow from "../../components/AnimatedRow";
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
+import "firebase/firestore";
+
+let db = firebase.firestore();
 
 export default class AboutUs extends React.Component {
+  constructor(props) {
+    super(props);
+
+    let eventsRef = db.collection('events');
+
+    eventsRef.get().then(snapshot => {
+      snapshot.forEach(doc => {
+	let eventList = document.getElementById('event-list');	
+	let name = doc.get("name");
+	let url = doc.get("URL");
+	let date = doc.get("date");
+	let entry = document.createElement('li');
+	let text = name + ' — ' + date;
+	if (url != null) {
+	  let event = document.createElement('a');
+	  event.textContent = text;
+	  event.href = url;
+	  entry.appendChild(event);
+	} else {
+	  let event = document.createTextNode(text);
+	  entry.appendChild(event);
+	}
+	eventList.appendChild(entry);
+      });
+    });
+  }
+		    
   render() {
     return (
       <div id={"about-us"} className={"section"}>
@@ -25,10 +58,7 @@ export default class AboutUs extends React.Component {
                   San Jose — though anyone is welcome.  If you're excited about Pete and want get involved, we have a number
                   of upcoming events such as:
                 </p>
-                <ul className={"center-ul"}>
-                  <li><h4><a href={"https://www.mobilize.us/peteforamerica/event/106448/"} target={"_blank"}>Debate Watch Party - July 30</a></li>
-                  <li><h4>SJ Pride Parade - Aug 25</h4></li>
-                </ul>
+              <ul className={"center-ul"} id="event-list"></ul>
                 <p>We organize our events through the SV for Pete Meetup.  Click below to get directed there and sign up!</p>
                 <div className={"about-us-button-container"}>
                   <a href={"https://www.meetup.com/SV-for-Pete-2020/"} className={"about-us-links"} target={"_blank"}>Meetup</a>

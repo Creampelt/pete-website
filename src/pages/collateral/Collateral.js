@@ -13,9 +13,8 @@ const EnglishSpanishButtons = ({ engHref, spanHref }) => (
 
 const EnglishOnlyButton = ({ engHref }) => (
     <div className={"language-button-container"}>
-        <a className={"language-links"} target={"_blank"} href={engHref}><p>English</p></a>
-        <a className={"language-links-invisible"} target={"_blank"} ><p>Español</p></a>
-
+            <a className={"language-links"} target={"_blank"} href={engHref}><p>English</p></a>
+            <a className={"language-links-invisible"} target={"_blank"} href={"nothing"} ><p>Español</p></a> 
     </div>
 );
 
