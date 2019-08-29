@@ -9,6 +9,11 @@
     "add": "^2.0.6",
     "animated-scroll-to": "^1.2.2",
     "create-react": "0.0.0",
+    "firebase": "^6.4.0",
+    "firebase-admin": "^8.4.0",
+    "firebase-functions": "^3.2.0",
+    "firebase-tools": "^7.3.0",
+    "http2": "^3.3.7",
     "pm2": "^3.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -17,7 +22,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-scroll-parallax": "^2.1.2",
-    "react-slideshow-image": "^1.1.8",
+    "react-slideshow-image": "^1.2.2",
     "yarn": "^1.16.0"
   },
   "scripts": {
