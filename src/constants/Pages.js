@@ -3,7 +3,7 @@ import RegisterToVote from "../pages/home/RegisterToVote";
 import AboutUs from "../pages/home/AboutUs";
 import Highlights from "../pages/home/Highlights";
 import MeetPete from "../pages/home/MeetPete";
-import Collateral from "../pages/collateral/Collateral";
+import Collateral from "../pages/Collateral";
 
 export default [
   {
