@@ -27,8 +27,4 @@ yarn-error.log*
 
 yarn.lock
 
-# keys
-pete2020-465f1e85c0f7.json
-
 package-lock.json
-package.json
