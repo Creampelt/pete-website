@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer className={"strato-blue single-column row"}>
-        <p className={"sans-serif"}><a href={"mailto:svforpete2020@gmail.com"}>svforpete2020@gmail.com</a></p>
+        <p className={"sans-serif"}><a href={"mailto:svpete2020@gmail.com"}>svforpete2020@gmail.com</a></p>
         <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
           <a href={"https://www.youtube.com/UCKQoHA9AvnJRWkxcOkXHHyw"} target={"_blank"}>
             <img src={youtubeIcon} alt={"YouTube"} />
