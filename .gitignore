@@ -28,3 +28,7 @@ yarn-error.log*
 yarn.lock
 
 package-lock.json
+
+# Firebase helper files for an environment
+.firebaserc
+
