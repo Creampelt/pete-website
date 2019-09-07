@@ -1,6 +1,7 @@
 import React from "react";
 import aboutUs from "../../assets/images/about-us-photo.png";
 import AnimatedRow from "../../components/AnimatedRow";
+import { Link } from "react-router-dom";
 
 export default class AboutUs extends React.Component {
   render() {
@@ -32,7 +33,7 @@ export default class AboutUs extends React.Component {
                 <p>We organize our events through the SV for Pete Meetup.  Click below to get directed there and sign up!</p>
                 <div className={"about-us-button-container"}>
                   <a href={"https://www.meetup.com/SV-for-Pete-2020/"} className={"about-us-links"} target={"_blank"}>Meetup</a>
-                  <a href={"https://www.meetup.com/SV-for-Pete-2020/"} className={"about-us-links"}>Explore Collateral</a>
+                  <Link to={"/collateral"} className={"about-us-links"}>Explore Collateral</Link>
                 </div>
               </div>
             </div>
