@@ -14,26 +14,26 @@ export default class AboutUs extends React.Component {
 
     let eventsRef = db.collection('events');
 
-    eventsRef.get().then(snapshot => {
-      snapshot.forEach(doc => {
-	let eventList = document.getElementById('event-list');	
-	let name = doc.get("name");
-	let url = doc.get("URL");
-	let date = doc.get("date");
-	let entry = document.createElement('li');
-	let text = name + ' — ' + date;
-	if (url != null) {
-	  let event = document.createElement('a');
-	  event.textContent = text;
-	  event.href = url;
-	  entry.appendChild(event);
-	} else {
-	  let event = document.createTextNode(text);
-	  entry.appendChild(event);
-	}
-	eventList.appendChild(entry);
+      eventsRef.get().then(snapshot => {
+          snapshot.forEach(doc => {
+              let eventList = document.getElementById('event-list');
+              let name = doc.get("name");
+              let url = doc.get("URL");
+              let date = doc.get("date");
+              let entry = document.createElement('li');
+              let text = name + ' — ' + date;
+              if (url != null) {
+                  let event = document.createElement('a');
+                  event.textContent = text;
+                  event.href = url;
+                  entry.appendChild(event);
+              } else {
+                  let event = document.createTextNode(text);
+                  entry.appendChild(event);
+              }
+              eventList.appendChild(entry);
+          });
       });
-    });
   }
 		    
   render() {

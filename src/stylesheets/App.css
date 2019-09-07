@@ -412,6 +412,18 @@ form > .small-col {
   color: #F2BA42;
 }
 
+#manage-widgets {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.manage-event-item {
+  list-style-type: none;
+}
+#manage-event-list {
+  list-style-type: none;
+}
+
 input:focus,
 select:focus,
 textarea:focus,

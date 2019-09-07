@@ -4,6 +4,7 @@ import AboutUs from "../pages/home/AboutUs";
 import Highlights from "../pages/home/Highlights";
 import MeetPete from "../pages/home/MeetPete";
 import Collateral from "../pages/Collateral";
+import ManageLogin, {Manage} from "../pages/Manage";
 
 export default [
   {
@@ -20,6 +21,18 @@ export default [
     href: "/collateral",
     sections: [
       { title: "Collateral", id: "#collateral", Component: Collateral, ref: true }
+    ]
+  },
+  {
+    href: "/managelogin",
+    sections: [
+      { title: "Admin", id: "#managelogin", Component: ManageLogin, ref: false }
+    ]
+  },
+  {
+    href: "/manage",
+    sections: [
+      { title: "Manage", id: "#manage", Component: Manage, ref: false }
     ]
   }
 ]
