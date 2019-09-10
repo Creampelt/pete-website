@@ -88,6 +88,10 @@ ul {
   color: #D34E23;
 }
 
+#aboutus-body {
+  text-align: justify;
+  padding: 40px;
+}
 #register-button {
   color: #EEF4F8;
   background-color: #1D253C;

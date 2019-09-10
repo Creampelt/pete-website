@@ -10,10 +10,10 @@ export default [
     href: "/",
     sections: [
       { title: "Home", id: "#home", Component: Home, ref: true },
-      { title: "Register to Vote", id: "#register-to-vote", Component: RegisterToVote, ref: false},
       { title: "About Us", id: "#about-us", Component: AboutUs, ref: true },
       { title: "Highlights", id: "#highlights", Component: Highlights, ref: false},
-      { title: "Meet Pete", id: "#meet-pete", Component: MeetPete, ref: true }
+      { title: "Meet Pete", id: "#meet-pete", Component: MeetPete, ref: true },
+      { title: "Register to Vote", id: "#register-to-vote", Component: RegisterToVote, ref: false}
     ]
   },
   {
