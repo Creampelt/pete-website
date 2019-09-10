@@ -23,7 +23,7 @@ export default class AboutUs extends React.Component {
               let date = doc.get("date");
               let entry = document.createElement('li');
               let text = name + ' — ' + date;
-              if (url != null) {
+              if (url != null && url !== '') {
                   let event = document.createElement('a');
                   event.textContent = text;
                   event.href = url;

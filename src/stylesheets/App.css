@@ -413,15 +413,10 @@ form > .small-col {
 }
 
 #manage-widgets {
-  display: inline-block;
-  list-style-type: none;
+  display: block;
 }
 
 .manage-event-item {
-  list-style-type: none;
-}
-#manage-event-list {
-  list-style-type: none;
 }
 
 input:focus,
@@ -431,6 +426,31 @@ button:focus {
   outline: none;
 }
 
+#download-button {
+  display: inline;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-left: 1em;
+}
+
+.error-button {
+  display: block;
+}
+.drag-handle {
+  display: inline-block;
+  top: 1px;
+  width: 18px;
+  height: 11px;
+  opacity: .25;
+  margin-right: 10px;
+  font-weight: 400;
+  background: -webkit-linear-gradient(top,#000,#000 20%,#fff 0,#fff 40%,#000 0,#000 60%,#fff 0,#fff 80%,#000 0,#000);position: relative;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
 @media (max-width: 1000px) {
   .row {
     flex-direction: column;
