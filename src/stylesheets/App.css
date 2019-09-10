@@ -412,11 +412,28 @@ form > .small-col {
   color: #F2BA42;
 }
 
-#manage-widgets {
-  display: block;
+#admin-content {
+  display: flex;
+  flex-direction: column;
 }
 
+#manage-widgets {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+#manage-event-list {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  flex-direction: column;
+}
 .manage-event-item {
+}
+
+#manage-actions {
+  padding-bottom: 20px;
 }
 
 input:focus,

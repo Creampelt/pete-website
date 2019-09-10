@@ -353,23 +353,25 @@ export class Manage extends React.Component {
             );
         } else {
             return (
-                <div id={"admin"} className={"calm-blue single-col-page"}>
+                <div id={'admin'} className={"calm-blue single-col-page"}>
                     <h2 style={{marginTop: "0"}}>SVForPete Admin</h2>
-                    <div>
-                        <h4>Actions</h4>
-                        <div id={"manage-widgets"}>
+                    <div id={'admin-content'}>
+                        <div id={'manage-actions'}>
+                            <h4>Actions</h4>
+                            <div id={'manage-widgets'}>
                             <span className={'error-button'}>
-                                <input type={"button"} value={"Download Membership Report"}
+                                <input type={'button'} value={'Download Membership Report'}
                                        onClick={this.downloadReport}/><this.DownloadErrorMsg/></span>
-                            <span className={'error-button'}><input type={"button"} value={"Submit"}
-                                                                    onClick={this.submit}/>
+                                <span className={'error-button'}><input type={'button'} value={'Submit'}
+                                                                        onClick={this.submit}/>
                             <this.SubmitErrorMsg/></span>
+                            </div>
                         </div>
-                        <h4> Event List </h4>
-                        <div>
+                        <div id={'manage-event-list'}>
+                            <h4> Event List </h4>
                             <this.SortableList items={this.state.events} onSortEnd={this.onSortEnd} useDragHandle/>
+                            <input type={'button'} value={'Add Event'} onClick={this.addEvent}/>
                         </div>
-                        <input type={'button'} value={'Add Event'} onClick={this.addEvent}/>
                     </div>
                 </div>
             );
