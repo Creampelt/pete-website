@@ -313,34 +313,19 @@ export class Manage extends React.Component {
         );
     });
 
-    //TODO(sturman): I should factor the following two methods into a single one called error message
-    //but I don't know how to handle the text as a parameter yet.  Ask emily.
     /**
-     * DownloadErrorMsg - Create either a message for a (permissions) error for downloading the contact
-     * report, or give an empty span.
-     * @returns {*}
-     * @constructor
+     * ErrorMsg(props) - Based-on the props, display an error message next to a manager action button.
+     *
+     * @param props -= Looks specifically at the 'cond' action (true for an error), and the children (text);
+     * @returns {null|*}
      */
-    DownloadErrorMsg = () => {
-        if (this.state.errors.download) {
-            return (<span className={'error-msg'}>Only managers can download the report.</span>);
-        } else {
-            return <span className={'error-msg'}/>;
-        }
-    };
+    ErrorMsg = (props) => {
+        let cond = props.cond;
+        let text = props.children;
 
-    /**
-     * SubmitErrorMsg - Create either a message for a (permissions) error for submitting an event
-     * list, or give an empty span.
-     * @returns {*}
-     * @constructor
-     */
-    SubmitErrorMsg = () => {
-        if (this.state.errors.submit) {
-            return (<span className={'error-msg'}>Only managers can see and edit event data.</span>)
-        } else {
-            return <span className={'error-msg'}/>;
-        }
+        if (cond) {
+            return (<span className={'error-msg'}>{text}</span>);
+        } else return null;
     };
 
     render() {
@@ -359,12 +344,19 @@ export class Manage extends React.Component {
                         <div id={'manage-actions'}>
                             <h4>Actions</h4>
                             <div id={'manage-widgets'}>
-                            <span className={'error-button'}>
-                                <input type={'button'} value={'Download Membership Report'}
-                                       onClick={this.downloadReport}/><this.DownloadErrorMsg/></span>
-                                <span className={'error-button'}><input type={'button'} value={'Submit'}
-                                                                        onClick={this.submit}/>
-                            <this.SubmitErrorMsg/></span>
+                                <span className={'error-button'}>
+                                    <input type={'button'} value={'Download Membership Report'}
+                                           onClick={this.downloadReport}/>
+                                <this.ErrorMsg cond={this.state.errors.download}>
+                                    Only managers can download the membership report.
+                                </this.ErrorMsg>
+                                </span>
+                                <span className={'error-button'}>
+                                <input type={'button'} value={'Submit Event List'} onClick={this.submit}/>
+                                <this.ErrorMsg cond={this.state.errors.submit}>
+                                    Only managers can see and edit the event list.
+                                </this.ErrorMsg>
+                                </span>
                             </div>
                         </div>
                         <div id={'manage-event-list'}>

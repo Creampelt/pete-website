@@ -423,8 +423,15 @@ form > .small-col {
 
 #manage-widgets {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: left;
   padding-top: 10px;
+}
+
+.error-button {
+  display: flex;
+  flex-direction: row;
+  width: auto;
 }
 
 #manage-event-list {
@@ -458,8 +465,8 @@ button:focus {
 }
 
 .error-button {
-  display: block;
 }
+
 .drag-handle {
   display: inline-block;
   top: 1px;
