@@ -22,9 +22,9 @@ export default class RegisterToVote extends React.Component {
           bottom={"right"}
           offset={50}
           leftContent={
-            <div style={{ marginLeft: 30 }} ref={this.contentRef}>
+            <div className={"register-move-in"} ref={this.contentRef}>
               <ArrowButton href={"https://registertovote.ca.gov"}>Register to Vote</ArrowButton>
-              <div className={"heartland-yellow"} style={{ width: "50vw", padding: "60px" }}>
+              <div className={"heartland-yellow below-arrow"}>
                 <h3>To vote in the 2020 California primary, you must register by February 17, 2020</h3>
               </div>
             </div>

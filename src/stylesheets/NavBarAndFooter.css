@@ -76,7 +76,6 @@ footer img {
 
 @media (min-width: 1001px) {
   .nav-bar {
-    position: sticky;
     top: 0;
   }
 
@@ -87,7 +86,7 @@ footer img {
 
 @media (max-width: 1000px) {
   .wrapper {
-    position: sticky;
+    position: fixed;
     top: 0;
     padding: 0;
     z-index: 1000000000000000000000;
@@ -149,5 +148,10 @@ footer img {
   .nav-buttons ul {
     flex-direction: column;
     justify-content: space-evenly;
+  }
+
+  .nav-ul {
+    height: 50vh;
+    margin-bottom: 81px;
   }
 }

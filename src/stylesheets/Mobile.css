@@ -1,0 +1,64 @@
+@media (max-width: 812px) {
+  #pete-portrait {
+    width: 100vw;
+  }
+
+  #get-involved-form-wrapper {
+    width: 100vw;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .background-img {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .collat-row {
+    flex-direction: column;
+  }
+
+  .arrow-button {
+    width: calc(100vw - 70px);
+  }
+
+  .column-content {
+    padding: 40px;
+  }
+
+  .below-arrow {
+    width: calc(100vw - 60px);
+  }
+
+  .register-move-in {
+    margin-left: 0;
+  }
+
+  .background {
+    opacity: 0;
+  }
+
+  .about-us-photo {
+    width: 80vw;
+    margin-left: 0;
+    height: 50vw;
+  }
+
+  .about-us-content {
+    padding-top: 60px;
+    width: 100vw;
+  }
+
+  #about-us {
+    padding-top: 150px;
+  }
+
+  .meet-pete-content {
+    width: calc(100vw - 60px);
+  }
+}

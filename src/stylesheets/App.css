@@ -255,6 +255,7 @@ a {
 .background {
   opacity: 0.5;
   width: 60vw;
+  z-index: 1;
 }
 
 .bottom-block {
@@ -345,20 +346,22 @@ a {
 }
 
 .spacer {
-  height: 100px;
+  height: calc(500px - 3vw);
 }
 
 .section {
   background-color: #eef4f8;
 }
 
-#get-involved-form {
+#get-involved-form-wrapper {
   width: 45vw;
-  position: absolute;
-  padding: 20px;
+  float: right;
+}
+
+#get-involved-form {
+  margin: 20px;
   font-size: 20px;
   font-family: "EB Garamond", serif;
-  right: 0;
 }
 
 #get-involved-form > h4 {
@@ -375,6 +378,12 @@ a {
 #get-involved-form form > div {
   display: flex;
   flex-direction: column;
+}
+
+#pete-portrait {
+  width: 45vw;
+  height: 100%;
+  object-fit: cover;
 }
 
 form > .large-col {
@@ -416,27 +425,39 @@ form > .small-col {
   color: #F2BA42;
 }
 
+.below-arrow {
+  width: 50vw;
+  padding: 30px;
+}
+
+.below-arrow > h3 {
+  font-size: 25px;
+}
+
+.register-move-in {
+  margin-left: 30px;
+}
+
+.about-us-photo {
+  width: 50vw;
+  height: 40vw;
+  object-fit: cover;
+  position: absolute;
+  margin-left: 30px;
+}
+
+.about-us-content {
+  width: 60vw;
+}
+
+.meet-pete-content {
+  width: 60vw;
+  padding: 30px;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
   outline: none;
-}
-
-@media (max-width: 1000px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .background-img {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-    background-position: center;
-  }
-
-  .collat-row {
-    flex-direction: column;
-  }
 }

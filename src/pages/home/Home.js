@@ -3,19 +3,14 @@ import petePortrait from "../../assets/images/pete.png";
 import Form from "../../components/Form";
 import MoveIn from "../../components/MoveIn";
 
-//<!--div id={'can-form-area-join-silicon-valley-for-pete'} style={{ width: "100%" }} -->
-
 export default class Home extends React.Component {
   render() {
-    const IMAGE_SIZE = "45vw";
     return (
       <div id={"home"} className={"section"}>
         <div className={"row strato-blue"}>
-          <div className={"column"} style={{ height: IMAGE_SIZE }}>
             <MoveIn from={"left"}>
-              <img src={petePortrait} alt={""} style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }} />
+              <img src={petePortrait} id={"pete-portrait"} alt={""} className={"column"} />
             </MoveIn>
-          </div>
           <div className={"column"}>
             <div className={"column-content"}>
               <h1>Silicon Valley<br />for <span style={{ color: "#f2ba42" }}>Pete</span></h1>
@@ -30,7 +25,6 @@ export default class Home extends React.Component {
             </MoveIn>
           </div>
         </div>
-        <div className={"spacer"} />
       </div>
     );
   }

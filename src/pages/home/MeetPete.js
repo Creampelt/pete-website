@@ -21,7 +21,7 @@ export default class MeetPete extends React.Component {
           bottom={"right"}
           offset={50}
           leftContent={
-            <div className={"heartland-yellow"} style={{ width: "60vw", padding: 30 }} ref={this.contentRef}>
+            <div className={"heartland-yellow meet-pete-content"} ref={this.contentRef}>
               <h2 style={{ textAlign: "center" }}>Meet Pete</h2>
               <div className={"row"}>
                 <div className={"column"}>
