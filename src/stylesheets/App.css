@@ -120,22 +120,28 @@ ul {
   margin: auto;
 }
 
-.about-us-button-container {
+.home-button-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  color: #f2e4d6;
 }
 
-.about-us-links {
+.home-links {
   text-decoration: none;
-  border: 4px solid black;
+  border: 4px solid #f2e4d6;
   padding: 10px;
-  width: 175px;
-  color: black !important;
+  text-align: center;
+  width: 120px;
+  color: #f2e4d6 !important;
   margin: 20px;
   background-color: transparent;
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
+}
+
+#event-list {
+  padding: 30px;
 }
 
 .calm-blue {
@@ -160,7 +166,6 @@ ul {
 }
 
 #highlights {
-  padding-top: 100px;
 }
 
 #media-container {
@@ -474,7 +479,7 @@ form > .small-col {
 
 .about-us-photo {
   width: 50vw;
-  height: 40vw;
+  height: 30vw;
   object-fit: cover;
   position: absolute;
   margin-left: 30px;
@@ -490,6 +495,7 @@ form > .small-col {
 
 .about-us-content {
   width: 60vw;
+  padding: 20px;
 }
 
 .meet-pete-content {
