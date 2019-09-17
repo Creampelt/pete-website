@@ -20,7 +20,7 @@ export default [
   {
     href: "/collateral",
     sections: [
-      { title: "Collateral", id: "#collateral", Component: Collateral, ref: true }
+      { title: "Collateral", id: "#collateral", Component: Collateral, ref: false }
     ]
   },
   {

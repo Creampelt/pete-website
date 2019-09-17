@@ -1,7 +1,7 @@
 import React from "react";
 import MoveIn from "./MoveIn";
 
-const SPACER = 200;
+const SPACER = 0;
 
 export default class AnimatedRow extends React.Component {
   constructor(props) {

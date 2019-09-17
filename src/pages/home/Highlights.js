@@ -7,7 +7,7 @@ const IMAGES = require.context("../../assets/images/slideshowImages", false, /\.
 export default class Highlights extends React.Component {
   render() {
     return (
-      <div className={"section"}>
+      <div id={"highlights"} className={"section"}>
         <InViewMonitor
           classNameNotInView={"transparent"}
           classNameInView={"opaque"}

@@ -88,10 +88,6 @@ ul {
   color: #D34E23;
 }
 
-#aboutus-body {
-  text-align: justify;
-  padding: 40px;
-}
 #register-button {
   color: #EEF4F8;
   background-color: #1D253C;
@@ -161,6 +157,10 @@ ul {
   margin: 10px;
   min-width: 300px;
   min-height: 210px;
+}
+
+#highlights {
+  padding-top: 100px;
 }
 
 #media-container {
@@ -433,7 +433,7 @@ form > .small-col {
 #manage-widgets {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  justify-content: space-around;
   padding-top: 10px;
 }
 
@@ -465,6 +465,9 @@ form > .small-col {
   font-size: 25px;
 }
 
+#register-to-vote {
+  padding: 100px;
+}
 .register-move-in {
   margin-left: 30px;
 }
@@ -475,6 +478,14 @@ form > .small-col {
   object-fit: cover;
   position: absolute;
   margin-left: 30px;
+}
+
+#about-us {
+  padding-top: 200px;
+}
+#aboutus-body {
+  text-align: center;
+  padding: 40px;
 }
 
 .about-us-content {
@@ -501,9 +512,6 @@ button:focus {
   color: red;
   font-size: 12px;
   margin-left: 1em;
-}
-
-.error-button {
 }
 
 .drag-handle {

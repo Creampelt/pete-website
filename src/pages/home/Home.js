@@ -15,9 +15,9 @@ export default class Home extends React.Component {
             <div className={"column-content"}>
               <h1>Silicon Valley<br />for <span style={{ color: "#f2ba42" }}>Pete</span></h1>
               <p>
-                We are a grassroots organization supporting Pete Buttigieg for President in 2020. Getting involved is
-                easy. Check all the options you are interested in and we'll provide details once we know you're in. If
-                you just want to be in the loop and kept informed - that's okay too!
+                Sign up here to receive our newsletter and occasional emails about local upcoming events such as
+                volunteer opportunities, local Pete appearances, and joining our fun MeetUp events like debate
+                night watch parties.
               </p>
             </div>
             <MoveIn from={"right"}>
