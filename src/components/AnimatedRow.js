@@ -35,7 +35,11 @@ export default class AnimatedRow extends React.Component {
           </div>
         </MoveIn>
         <MoveIn from={this.props.bottom === "right" ? "left" : "right"}>
-          <div className={"top-block " + (!rightBottom ? "right-block" : "left-block")} ref={this.topRef} style={{ top: this.props.offset }}>
+          <div
+            className={"top-block " + (!rightBottom ? "right-block" : "left-block")}
+            ref={this.topRef}
+            style={{ top: this.props.offset }}
+          >
             {!rightBottom ? this.props.rightContent : this.props.leftContent}
           </div>
         </MoveIn>

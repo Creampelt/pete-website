@@ -1,5 +1,6 @@
 import React from "react";
 import "./stylesheets/App.css";
+import "./stylesheets/Mobile.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
@@ -25,7 +26,8 @@ export default class App extends React.Component {
       navColors: (new Array(this.pageLinkData.length)).fill(false),
       prevColor: null,
       page: "",
-      section: null
+      section: null,
+      showMenu: false
     };
   }
 
@@ -46,6 +48,8 @@ export default class App extends React.Component {
 
   setSection = (section) => this.setState({ section });
 
+  toggleMenu = () => this.setState({ showMenu: !this.state.showMenu });
+
   setActiveColor = (page, index) => {
     let pageIndex = getPrevPages(page);
     if (index + pageIndex === this.state.prevColor || pageIndex === -1) return;
@@ -57,27 +61,27 @@ export default class App extends React.Component {
 
   Routes = ({ refs }) => (
     <Switch>
-    {pages.map((page, i) => {
-      if (!refs[page.href]) return null;
-      let Sections = () => page.sections.map(({ id, Component }, j) => (
-        <div key={i + " " + j} id={id} ref={refs[page.href][j]}><Component /></div>
-      ));
-      return (
-        <Route exact key={i} path={page.href} render={(props) => (
-          <SkeletonPage
-            page={page.href}
-            setPage={this.setPage}
-            section={this.state.section}
-            refs={refs}
-            setActiveColor={this.setActiveColor}
-            prevColor={this.state.prevColor}
-            {...props}
-          >
-            <Sections />
-          </SkeletonPage>
-        )} />
-      )
-    }).concat(<Route component={NotFound} key={pages.length} />)}
+      {pages.map((page, i) => {
+        if (!refs[page.href]) return null;
+        let Sections = () => page.sections.map(({ id, Component }, j) => (
+          <div key={i + " " + j} id={id} ref={refs[page.href][j]}><Component /></div>
+        ));
+        return (
+          <Route exact key={i} path={page.href} render={(props) => (
+            <SkeletonPage
+              page={page.href}
+              setPage={this.setPage}
+              section={this.state.section}
+              refs={refs}
+              setActiveColor={this.setActiveColor}
+              prevColor={this.state.prevColor}
+              {...props}
+            >
+              <Sections />
+            </SkeletonPage>
+          )} />
+        )
+      }).concat(<Route component={NotFound} key={pages.length} />)}
     </Switch>
   );
 
@@ -94,7 +98,14 @@ export default class App extends React.Component {
     return (
       <Router>
         <div className={"App"}>
-          <NavBar {...this.state} pageLinkData={this.pageLinkData} getPrevPages={getPrevPages} setSection={this.setSection} />
+          <NavBar hide />
+          <NavBar
+            {...this.state}
+            pageLinkData={this.pageLinkData}
+            getPrevPages={getPrevPages}
+            setSection={this.setSection}
+            toggleMenu={this.toggleMenu}
+          />
           <this.Routes refs={this.refs} />
           <Footer />
         </div>

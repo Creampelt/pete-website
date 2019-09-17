@@ -19,7 +19,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
-				
+
 export default class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +34,7 @@ export default class Form extends React.Component {
   handleNameChange(event) {
     this.setState({name:event.target.value});
   }
-  
+
   handleEmailChange(event) {
     this.setState({email:event.target.value});
   }
@@ -58,25 +58,27 @@ export default class Form extends React.Component {
     // We shouldn't need that as all we care about is putting the data in firebase.
     event.preventDefault();
   }
-  
+
   render() {
     return (
-	<div id={"get-involved-form"} className={"heartland-yellow"}>
-        <h4>Get involved today</h4>
-        <form id="contact-form" onSubmit={this.handleSubmit} >
-        <div className={"large-col"}>
-        <input type={"text"} value={this.state.name}
-      onChange={this.handleNameChange} placeholder={"Full name*"} required />
-        <input type={"text"} value={this.state.email}
-      onChange={this.handleEmailChange} placeholder={"Email*"} required />
+        <div id={"get-involved-form-wrapper"} className={"heartland-yellow"}>
+            <div id={"get-involved-form"} className={"heartland-yellow"}>
+                <h4>Get involved today</h4>
+                <form id="contact-form" onSubmit={this.handleSubmit} >
+                    <div className={"large-col"}>
+                        <input type={"text"} value={this.state.name}
+                               onChange={this.handleNameChange} placeholder={"Full name*"} required />
+                        <input type={"text"} value={this.state.email}
+                               onChange={this.handleEmailChange} placeholder={"Email*"} required />
+                    </div>
+                    <div className={"small-col"}>
+                        <input type={"text"} value={this.state.zip}
+                               onChange={this.handleZipChange} placeholder={"Zip code*"} required />
+                        <input type={"submit"} value="Submit" className={"submit"} />
+                    </div>
+                </form>
+            </div>
         </div>
-        <div className={"small-col"}>
-        <input type={"text"} value={this.state.zip}
-      onChange={this.handleZipChange} placeholder={"Zip code*"} required />
-        <input type={"submit"} value="Submit" className={"submit"} />
-        </div>
-        </form>
-	</div>
     )
   }
 }
