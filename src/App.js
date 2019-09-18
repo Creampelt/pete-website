@@ -1,4 +1,5 @@
 import React from "react";
+import "./pages/SetupFirebase";
 import "./stylesheets/App.css";
 import "./stylesheets/Mobile.css";
 import NavBar from "./components/NavBar";

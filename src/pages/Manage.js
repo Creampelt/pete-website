@@ -2,9 +2,10 @@ import React from "react";
 import "../stylesheets/App.css";
 import {SortableContainer, SortableElement, SortableHandle} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
-
-const { Parser } = require('json2csv');
-const firebase = require('firebase');
+import { Parser } from 'json2csv';
+import firebase from 'firebase/app';
+//const { Parser } = require('json2csv');
+//const firebase = require('firebase');
 const db = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -119,6 +120,7 @@ export class Manage extends React.Component {
         }).catch((error) => {
             // Should be here due to insufficient permissions.
             this.setState({ errors: { download: true } });
+            console.error(error);
         });
 
     };
