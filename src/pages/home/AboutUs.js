@@ -1,5 +1,5 @@
 import React from "react";
-import aboutUs from "../../assets/images/about-us-photo.png";
+import aboutUs from "../../assets/images/group-picture.jpg";
 import Form from "../../components/Form";
 import AnimatedRow from "../../components/AnimatedRow";
 

@@ -22,13 +22,6 @@ export default class Highlights extends React.Component {
                 className={"media"}
                 title={"Silicon Valley for Pete Watch Party"}
               />
-              <iframe
-                src={"https://www.youtube.com/embed/nxHlKP4km7E"}
-                allow={"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"}
-                allowFullScreen
-                className={"media"}
-                title={"Flyer Walk at San Mateo Pride"}
-              />
               <Slideshow images={IMAGES} />
             </div>
           </div>

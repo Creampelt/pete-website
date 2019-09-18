@@ -487,6 +487,7 @@ form > .small-col {
 }
 
 #about-us {
+  z-index: 1;
   padding-top: 200px;
 }
 #aboutus-body {
