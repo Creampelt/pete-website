@@ -14,17 +14,32 @@ export default class Home extends React.Component {
     let eventsRef = db.collection('events');
 
     eventsRef.get().then(snapshot => {
+      let events = [];
+      // Build an events array by reading in each element from firebase
+      // Each array element contains the name and date, along with a possible URL.
+      // We're building this array so we can sort it before rending the events.
       snapshot.forEach(doc => {
-        let eventList = document.getElementById('event-list');
         let name = doc.get("name");
         let url = doc.get("URL");
         let date = doc.get("date");
+        let item = { name, url, date };
+        events.push(item);
+      });
+
+      // Sort the array.  Use Date.parse to allow a comparison.
+      events.sort((first, second) => {
+        return Date.parse(first.date) - Date.parse(second.date);
+      });
+
+      // Render the events from the now sorted event list.
+      let eventList = document.getElementById('event-list');
+      events.forEach(item => {
         let entry = document.createElement('li');
-        let text = name + ' — ' + date;
-        if (url != null && url !== '') {
+        let text = item.name + ' — ' + item.date;
+        if (item.url != null && item.url !== '') {
           let event = document.createElement('a');
           event.textContent = text;
-          event.href = url;
+          event.href = item.url;
           entry.appendChild(event);
         } else {
           let event = document.createTextNode(text);
