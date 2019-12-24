@@ -13,7 +13,7 @@ const provider = new firebase.auth.GoogleAuthProvider();
  * Manage component implements the entire admin management console.  Necessary behavior is:
  * -- Authenticate user on access to ensure they are in the "manager" role as defined in Firestore.
  * -- Allow download of contact information submitted on the website.
- * -- Edit and update the list of events as shown on the AboutUs page of the website.
+ * -- Edit and update the list of events as shown on the SignUp page of the website.
  */
 export class Manage extends React.Component {
     state = {

@@ -38,6 +38,7 @@ export default class Home extends React.Component {
         let text = item.name + ' — ' + item.date;
         if (item.url != null && item.url !== '') {
           let event = document.createElement('a');
+          event.className = 'event-links';
           event.textContent = text;
           event.href = item.url;
           entry.appendChild(event);

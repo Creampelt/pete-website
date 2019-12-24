@@ -49,22 +49,22 @@ export default class Form extends React.Component {
   render() {
     return (
         <div id={"get-involved-form-wrapper"} className={"heartland-yellow"}>
-            <div id={"get-involved-form"} className={"heartland-yellow"}>
-                <h4>Get involved today</h4>
-                <form id="contact-form" onSubmit={this.handleSubmit} >
-                    <div className={"large-col"}>
-                        <input type={"text"} value={this.state.name}
-                               onChange={this.handleNameChange} placeholder={"Full name*"} required />
-                        <input type={"text"} value={this.state.email}
-                               onChange={this.handleEmailChange} placeholder={"Email*"} required />
-                    </div>
-                    <div className={"small-col"}>
-                        <input type={"text"} value={this.state.zip}
-                               onChange={this.handleZipChange} placeholder={"Zip code*"} required />
-                        <input type={"submit"} value="Submit" className={"submit"} />
-                    </div>
-                </form>
-            </div>
+          <div id={"get-involved-form"} className={"heartland-yellow"}>
+            <h4>Get involved today</h4>
+            <form id="contact-form" onSubmit={this.handleSubmit} >
+              <div className={"large-col"}>
+                <input type={"text"} value={this.state.name}
+                       onChange={this.handleNameChange} placeholder={"Full name*"} required />
+                <input type={"text"} value={this.state.email}
+                       onChange={this.handleEmailChange} placeholder={"Email*"} required />
+              </div>
+              <div className={"small-col"}>
+                <input type={"text"} value={this.state.zip}
+                       onChange={this.handleZipChange} placeholder={"Zip code*"} required />
+                <input type={"submit"} value="Submit" className={"submit"} />
+              </div>
+            </form>
+          </div>
         </div>
     )
   }
